@@ -1,0 +1,30 @@
+{
+    "name": "gabs/sandbox",
+    "description": "php exploration",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gabs\\Sandbox\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "John Paul Gabule",
+            "email": "lucas.gabule@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.11",
+        "friendsofphp/php-cs-fixer": "^3.65"
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint:fix": "phpcbf",
+        "format": "php-cs-fixer fix --config=.php-cs-fixer.php",
+        "check-style": [
+            "@lint",
+            "php-cs-fixer fix --config=.php-cs-fixer.php --dry-run --diff"
+        ]
+    }
+}
