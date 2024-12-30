@@ -1,9 +1,10 @@
 {
 	"cSpell.words": [
-		"codesniffer",
-		"friendsofphp",
-		"squizlabs"
-	],
+        "codesniffer",
+        "friendsofphp",
+        "squizlabs",
+        "Tigger"
+    ],
 	"php.suggest.basic": false,
     "[php]": {
         "editor.formatOnSave": true,
