@@ -1,4 +1,5 @@
 <?php
+
 # Example 1
 // $input_arr = array('a', 'b', 'c', 'd', 'e');
 // print_r(array_chunk($input_arr, 2));
@@ -39,9 +40,9 @@
 // )
 
 // NOTE:
-// Tried to use an example below (#56022) for array_chunk_fixed that would "partition" or divide an array into a 
-// desired number of split lists -- a useful procedure for "chunking" up objects or text items into columns, or 
-// partitioning any type of data resource. However, there seems to be a flaw with array_chunk_fixed — for instance, 
+// Tried to use an example below (#56022) for array_chunk_fixed that would "partition" or divide an array into a
+// desired number of split lists -- a useful procedure for "chunking" up objects or text items into columns, or
+// partitioning any type of data resource. However, there seems to be a flaw with array_chunk_fixed — for instance,
 // try it with a nine item list and with four partitions. It results in 3 entries with 3 items, then a blank array.
 // So, here is the output of my own dabbling on the matter:
 // function partition(array $list, int $p) {
@@ -172,32 +173,32 @@
 
 
 # chunk array vertically
-$arr = range(1, 19);
-function array_chunk_vertical($arr, $per_column)
-{
-  $n = count($arr);
-  $mod = $n % $per_column;
-  $cols = floor($n / $per_column);
-  $mod ? $cols++ : null;
-  $re = [];
+// $arr = range(1, 19);
+// function array_chunk_vertical($arr, $per_column)
+// {
+//   $n = count($arr);
+//   $mod = $n % $per_column;
+//   $cols = floor($n / $per_column);
+//   $mod ? $cols++ : null;
+//   $re = [];
 
-  for ($col = 0; $col < $cols; $col++) {
-    for ($row = 0; $row < $per_column; $row++) {
-      if ($arr) {
-        $re[$row][] = array_shift($arr);
-      }
-    }
-  }
-  return $re;
-}
+//   for ($col = 0; $col < $cols; $col++) {
+//     for ($row = 0; $row < $per_column; $row++) {
+//       if ($arr) {
+//         $re[$row][] = array_shift($arr);
+//       }
+//     }
+//   }
+//   return $re;
+// }
 
-$result = array_chunk_vertical($arr, 6);
-foreach($result as $row) {
-  foreach($row as $v) {
-    echo "[$v]";
-  }
-  echo PHP_EOL;
-}
+// $result = array_chunk_vertical($arr, 6);
+// foreach($result as $row) {
+//   foreach($row as $v) {
+//     echo "[$v]";
+//   }
+//   echo PHP_EOL;
+// }
 /*
 [1][7][13][19]
 [2][8][14]
@@ -206,3 +207,7 @@ foreach($result as $row) {
 [5][11][17]
 [6][12][18]
  */
+
+// $numRange = range(1, 7);
+// $rows = array_chunk($numRange, 3);
+// print_r($rows);
