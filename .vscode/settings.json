@@ -1,6 +1,7 @@
 {
 	"cSpell.words": [
         "codesniffer",
+        "CREDITCARD",
         "friendsofphp",
         "squizlabs",
         "Tigger"
@@ -13,5 +14,6 @@
     "php-cs-fixer.config": ".php-cs-fixer.php",
     "php-cs-fixer.executablePath": "${workspaceFolder}/vendor/bin/php-cs-fixer",
     "php-cs-fixer.onsave": true,
-    "php-cs-fixer.rules": "@PSR12"
+    "php-cs-fixer.rules": "@PSR12",
+    "php.version": "8.3"
 }
