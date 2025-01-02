@@ -59,27 +59,17 @@ if(rhubarb) {
 	rhubarb.join(', ')
 }
 
-// The challenge - Data Collector
-export interface DataEntity {
-	id: string
-}
-
+// The challenge - DataStore
+export interface DataEntity { id: string }
 export interface Movie extends DataEntity { director: string }
 export interface Song extends DataEntity { singer: string }
-export type DataEntityMap = {
-	movie: Movie;
-	song: Song
-}
+export type DataEntityMap = { movie: Movie; song: Song }
 
 type DataStoreMethods = {
 	[K in keyof DataEntityMap as `getAll${Capitalize<K>}s`]: () => DataEntityMap[K][]
-} & {
-	[K in keyof DataEntityMap as `get${Capitalize<K>}`]: (id: string) => DataEntityMap[K]
-} & {
-	[K in keyof DataEntityMap as `clear${Capitalize<K>}s`]: () => void
-} & {
-	[K in keyof DataEntityMap as `add${Capitalize<K>}`]: (arg: DataEntityMap[K]) => DataEntityMap[K]
-}
+} & { [K in keyof DataEntityMap as `get${Capitalize<K>}`]: (id: string) => DataEntityMap[K] } 
+  & { [K in keyof DataEntityMap as `clear${Capitalize<K>}s`]: () => void } 
+	& { [K in keyof DataEntityMap as `add${Capitalize<K>}`]: (arg: DataEntityMap[K]) => DataEntityMap[K] }
 
 function isDefined<T>(x: T | undefined) : x is T {
 	return typeof x !== 'undefined';
@@ -111,7 +101,7 @@ export class DataStore implements DataStoreMethods {
 
 	getMovie(movieKey: string) {
 		const movie = this.#data.movie[movieKey];
-		if (!movie) throw new Error(`Could not find Movie with id ${movieKey}`);
+		if (!movie) throw new Error(`Could not find movie with id ${movieKey}`);
 		return movie;
 	}
 
