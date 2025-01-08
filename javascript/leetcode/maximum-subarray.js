@@ -78,6 +78,6 @@ const nums2 = [5, 4, -1, 7, 8]; // 23
 // console.log(kadanes(nums1));
 // console.log(kadanes(nums2));
 
-console.log(slidingWindow(nums0));
-console.log(slidingWindow(nums1));
-console.log(slidingWindow(nums2));
+// console.log(slidingWindow(nums0));
+// console.log(slidingWindow(nums1));
+// console.log(slidingWindow(nums2));
