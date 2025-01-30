@@ -1,15 +1,13 @@
-
-
-var lengthOfLongestSubstring = function (s) {
-	const hm = {};
-	const str = s.split('');
-	for(let i = 0; i < str.length; i++) {
-		if(!(str[i] in hm)) {
-			hm[str[i]] = str[i]
-		}
-	}
-	return Object.values(hm).join('').length;
-};
+// var lengthOfLongestSubstring = function (s) {
+// 	const hm = {};
+// 	const str = s.split('');
+// 	for(let i = 0; i < str.length; i++) {
+// 		if(!(str[i] in hm)) {
+// 			hm[str[i]] = str[i]
+// 		}
+// 	}
+// 	return Object.values(hm).join('').length;
+// };
 
 // console.log(lengthOfLongestSubstring("abcabcbb"))
 // console.log(lengthOfLongestSubstring("bbbbb"))
@@ -33,6 +31,8 @@ function lengthOfLongestSubstring(s) {
 
 			// Update the maximum length if needed
 			maxLen = Math.max(maxLen, right - left + 1);
+
+			console.log(`maxLen: ${maxLen}, right: ${right} - left: ${left} + 1`)
 	}
 
 	return maxLen;
